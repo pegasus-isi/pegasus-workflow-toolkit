@@ -7,7 +7,7 @@ This repository is the **Pegasus Workflow Toolkit** — a set of Claude Code ski
 ```
 .claude/skills/          # 7 custom slash commands for Pegasus workflow development
 pegasus-templates/       # Copy-paste-and-customize starting points for all file types
-examples/                # Curated reference files from 5 production Pegasus workflows
+examples/                # Curated reference files from 6 production Pegasus workflows
 Pegasus.md               # Comprehensive Pegasus development guide (knowledge base)
 ```
 
@@ -22,6 +22,7 @@ Pegasus.md               # Comprehensive Pegasus development guide (knowledge ba
 | `examples/workflow_generator_mag.py` | Best example of shell wrappers, `is_stageable=False`, micromamba, `--test` mode |
 | `examples/workflow_generator_soilmoisture.py` | Best example of ML train-then-predict |
 | `examples/workflow_generator_airquality.py` | Most feature-rich (dual pipeline, skip flags, multiple data sources) |
+| `examples/workflow_generator_proteinfold.py` | Best example of multi-mode workflow, GPU jobs, CondorIO `transfer_input_files`, batched inference |
 
 ## Available Skills
 
@@ -53,6 +54,11 @@ Users invoke these via slash commands:
 | Environment variable secrets | airquality |
 | Micromamba container | mag |
 | Per-tool resource dictionary | mag, earthquake |
+| CondorIO `transfer_input_files` for caches/databases | proteinfold, (see Pegasus.md) |
+| Multi-mode workflow (single generator, multiple DAGs) | proteinfold |
+| GPU inference jobs | proteinfold |
+| Batched inference (`collate`/chunked parallelism) | proteinfold |
+| Nextflow conversion | proteinfold |
 
 ## Public Workflow Repositories
 
